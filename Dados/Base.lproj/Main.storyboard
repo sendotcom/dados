@@ -50,6 +50,13 @@
                                     <action selector="rollPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fun-24-aA6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qys-qu-nPE">
+                                <rect key="frame" x="180" y="758" width="54" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -63,6 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SumaTotal" destination="qys-qu-nPE" id="0yB-YY-HVX"/>
                         <outlet property="imageViewDiceLeft" destination="q3Y-a6-uNw" id="z3p-Sh-gAC"/>
                         <outlet property="imageViewDiceRight" destination="Qmw-Gd-w1h" id="ZoK-Qj-Tzt"/>
                     </connections>

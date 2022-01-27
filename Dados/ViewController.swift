@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageViewDiceLeft: UIImageView!
     @IBOutlet weak var imageViewDiceRight: UIImageView!
+    @IBOutlet weak var SumaTotal: UILabel!
     
     var randomDiceIndexLeft : Int = 0
     var randomDiceIndexRight : Int = 0
@@ -39,14 +40,30 @@ class ViewController: UIViewController {
     
     
     func generateRandomDices(){
-       randomDiceIndexLeft = Int(arc4random_uniform(nFaces))
+        randomDiceIndexLeft = Int(arc4random_uniform(nFaces))
         randomDiceIndexRight = Int(arc4random_uniform(nFaces))
         
-        print(randomDiceIndexLeft)
-        print(randomDiceIndexRight)
+        var SumaDeLosDato: Int = 0
+        
+        SumaDeLosDato = (randomDiceIndexLeft+randomDiceIndexRight)+2
+        
+        SumaTotal.text = String(SumaDeLosDato)
+        
+        print("El izk es \(randomDiceIndexLeft)")
+        print("El der es \(randomDiceIndexRight)")
         
         imageViewDiceLeft.image = UIImage(named: _diceImages[randomDiceIndexLeft])
         imageViewDiceRight.image = UIImage(named: _diceImages[randomDiceIndexRight])
+        
+        
+        let alerta = UIAlertController(title: "Resultado", message: "El resultado fue \(SumaDeLosDato)", preferredStyle: .alert)
+        
+        let botonAceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        
+        alerta.addAction(botonAceptar)
+        
+        show(alerta, sender: nil)
+        
         
     }
     
